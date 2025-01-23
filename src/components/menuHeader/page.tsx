@@ -10,7 +10,7 @@ import {
     MenubarTrigger,
 } from "@/components/ui/menubar";
 
-const MenubarComponent: React.FC = () => {
+const Header: React.FC = () => {
   return (
     <div >
         <Menubar className="flex justify-center">
@@ -37,4 +37,4 @@ const MenubarComponent: React.FC = () => {
   );
 };
 
-export default MenubarComponent;
+export default Header;

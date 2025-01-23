@@ -5,7 +5,7 @@ import { PiForkKnife } from "react-icons/pi";
 import { MdGolfCourse } from "react-icons/md";
 import LanguageDropdown from "../langDropDwn/page";
 
-const Navbar: React.FC = () => {
+const Nav: React.FC = () => {
 
   return (
     <nav className="flex items-center justify-between px-10 py-5 bg-#FAFAFA shadow-md font-roboto">
@@ -38,4 +38,4 @@ const Navbar: React.FC = () => {
   );
 };
 
-export default Navbar;
+export default Nav;

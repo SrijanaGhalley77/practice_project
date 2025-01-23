@@ -21,7 +21,7 @@ const images = [
 
 const SliderComponent: React.FC = () => {
     return (
-        <section className="flex items-center justify-center relative w-svw h-[1024] overflow-hidden">
+        <section className="flex items-center justify-center relative w-svw h-1/4 overflow-hidden">
                 <Carousel className="w-full h-full object-cover" totalItems={images.length}>
                     <CarouselContent>
                         {images.map((image, index) => (
