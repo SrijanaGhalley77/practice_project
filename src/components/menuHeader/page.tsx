@@ -1,38 +1,21 @@
-// "use client";
+"use client";
 import React from 'react';
-import {
-    Menubar,
-    MenubarContent,
-    MenubarItem,
-    MenubarMenu,
-    MenubarSeparator,
-    MenubarShortcut,
-    MenubarTrigger,
-} from "@/components/ui/menubar";
+import { Button } from "@/components/ui/button"
+
 
 const Header: React.FC = () => {
   return (
     <div >
-        <Menubar className="flex justify-center font-roboto w-svw">
-            <MenubarMenu>
-                <MenubarTrigger>About Us</MenubarTrigger>
-                {/* <MenubarContent>
-                    <MenubarItem>
-                        New Tab <MenubarShortcut>⌘T</MenubarShortcut>
-                    </MenubarItem>
-                    <MenubarItem>New Window</MenubarItem>
-                    <MenubarSeparator />
-                    <MenubarItem>Share</MenubarItem>
-                    <MenubarSeparator />
-                    <MenubarItem>Print</MenubarItem>
-                </MenubarContent> */}
-                <MenubarTrigger>Menu</MenubarTrigger>
-                <MenubarTrigger>Contacts</MenubarTrigger>
-                <MenubarTrigger>Reservations</MenubarTrigger>
-                <MenubarTrigger>Shops</MenubarTrigger>
-                <MenubarTrigger>News</MenubarTrigger>
-            </MenubarMenu>
-        </Menubar>
+        <header className='flex flex-col justify-center items-center font-roboto'>
+        <p className='font-semiold text-5xl w-[900px] text-center text-primary-950'>Our menu is a carefully curated selection of Italian masterpieces.</p>
+        <div className='flex justify-between gap-4'>
+            <Button>Apetizers</Button>
+            <Button>Main Course</Button>
+            <Button>Desserts</Button>
+            <Button>Wine</Button>
+            <Button>Specials</Button>
+        </div>
+    </header>
     </div>
   );
 };
