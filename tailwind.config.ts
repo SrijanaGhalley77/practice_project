@@ -13,6 +13,32 @@ export default {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
 			white: '#fff',
+			primary: {
+				50: '#fbf9eb',
+				100: '#f7f1ca',
+				200: '#efe199',
+				300: '#e6c95e',
+				400: '#ddb232',
+				500: '#ce9b24',
+				600: '#b1791d',
+				700: '#8e581a',
+				800: '#76471d',
+				900: '#5b361b',
+				950: '#3a1f0e'
+			},
+			secondary: {
+				50: '#ffffff',
+				100: '#efefef',
+				200: '#dcdcdc',
+				300: '#bdbdbd',
+				400: '#989898',
+				500: '#7c7c7c',
+				600: '#656565',
+				700: '#525252',
+				800: '#464646',
+				900: '#3d3d3d',
+				950: '#292929'
+			},
 			stone: {
 				50: '#FAFAF9',
 				100: '#F5F5F4',
@@ -47,14 +73,14 @@ export default {
   				DEFAULT: 'hsl(var(--popover))',
   				foreground: 'hsl(var(--popover-foreground))'
   			},
-  			primary: {
-  				DEFAULT: 'hsl(var(--primary))',
-  				foreground: 'hsl(var(--primary-foreground))'
-  			},
-  			secondary: {
-  				DEFAULT: 'hsl(var(--secondary))',
-  				foreground: 'hsl(var(--secondary-foreground))'
-  			},
+  			// primary: {
+  			// 	DEFAULT: 'hsl(var(--primary))',
+  			// 	foreground: 'hsl(var(--primary-foreground))'
+  			// },
+  			// secondary: {
+  			// 	DEFAULT: 'hsl(var(--secondary))',
+  			// 	foreground: 'hsl(var(--secondary-foreground))'
+  			// },
   			muted: {
   				DEFAULT: 'hsl(var(--muted))',
   				foreground: 'hsl(var(--muted-foreground))'
@@ -85,6 +111,29 @@ export default {
   		},
 		fontFamily: {
 			roboto: ["var(--font-roboto)"]
+		},
+		fontSize: {
+			'xs': '0.75rem',   
+			'sm': '0.875rem',  
+			'base': '1rem',    
+			'lg': '1.125rem',  
+			'xl': '1.25rem',   
+			'2xl': '1.5rem',   
+			'3xl': '1.875rem', 
+			'4xl': '2.25rem',  
+			'5xl': '3rem',     
+			'6xl': '4rem',     
+			// Custom sizes
+			'tiny': '0.625rem', 
+			'huge': '2.5rem',   
+		},
+		lineHeight: {
+			normal: '1.5',       
+			snug: '1.375rem',    
+			relaxed: '1.625rem',   
+			'extra-loose': '2rem', 
+			'tight': '20px',       
+			'loose': '28px',       
 		}
 		
   	}

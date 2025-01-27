@@ -13,7 +13,7 @@ import {
 const Header: React.FC = () => {
   return (
     <div >
-        <Menubar className="flex justify-center">
+        <Menubar className="flex justify-center font-roboto w-svw">
             <MenubarMenu>
                 <MenubarTrigger>About Us</MenubarTrigger>
                 {/* <MenubarContent>

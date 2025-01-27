@@ -11,17 +11,17 @@ const LanguageDropdown: React.FC = () => {
   };
 
   return (
-    <div className={`relative inline-block text-left group font-roboto`}>
+    <section className={`relative inline-block text-left group font-roboto`}>
       <div>
         <button
           type="button"
-          className="inline-flex justify-between items-center w-full  bg-white text-sm font-semibold text-stone-700 hover:bg-gray-50 focus:outline-none font-medium"
+          className="inline-flex justify-between items-center w-full bg-secondary-50 text-sm font-medium text-stone-700 hover:bg-gray-50 focus:outline-none"
           aria-haspopup="true"
           aria-expanded="true"
         >
-          <img src={flag} alt="Selected Language Flag" className="mr-2 h-6 w-6" />
+          <img src={flag} alt="Selected Language Flag" className="mr-2 h-7 w-7" />
           {language}
-          <FaChevronDown className="ml-2 size-2 text-gray-500" /> {/* Add down arrow icon */}
+          <FaChevronDown className="ml-2 size-2 text-secondary-800" /> {/* down arrow icon */}
         </button>
       </div>
 
@@ -48,7 +48,7 @@ const LanguageDropdown: React.FC = () => {
           </li>
         </ul>
       </div>
-    </div>
+    </section>
   );
 };
 

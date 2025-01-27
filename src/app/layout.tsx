@@ -34,8 +34,10 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased ${roboto.variable}`}
-      >
+      > 
+        <header className="bg-secondary-50">
           <Nav />
+        </header>
         {children}
       </body>
     </html>
