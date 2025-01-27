@@ -8,7 +8,7 @@ import LanguageDropdown from "../langDropDwn/page";
 const Nav: React.FC = () => {
 
   return (
-    <nav className="flex items-center justify-between px-10 py-5 bg-#FAFAFA shadow-md font-roboto">
+    <nav className="flex items-center justify-between px-10 py-5 bg-white shadow-md font-roboto">
       {/* Left side with navigation buttons */}
       <div className="flex space-x-3">
         <button className="text-neutral-950 flex items-center">
