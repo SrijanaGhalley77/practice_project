@@ -12,8 +12,8 @@ const Menu: React.FC = () => {
     };
 
     return (
-        <div className='flex justify-between'>
-          <div className="w-1/2">
+        <div className='flex justify-between w-full h-svh'>
+          <div className="w-1/2 p-x-5">
             <MenuTable onRowClick={handleRowClick} />
           </div>
           <div className="w-1/2">

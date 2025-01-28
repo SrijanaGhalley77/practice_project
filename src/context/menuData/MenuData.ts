@@ -3,7 +3,7 @@ export const menuItems = [
     {
         name: "Bruschetta al Pomodoro",
         totalAmount: "$12.00",
-        image: { src: './bruschetta.jpeg', alt: 'Bruschetta al Pomodoro' },
+        image: { src: './bruschetta.jpg', alt: 'Bruschetta al Pomodoro' },
     },
     {
         name: "Caprese Salad",
