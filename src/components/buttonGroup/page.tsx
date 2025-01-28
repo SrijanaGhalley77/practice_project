@@ -17,7 +17,7 @@ const ButtonGroup: React.FC = () => {
           key={label}
           variant={selected === label ? "default" : "outline"} // Change variant based on selection
           className={`${
-            selected === label ? "bg-primary-950 text-secondary-100" : ""
+            selected === label ? "bg-primary-800 text-secondary-50" : "bg-gray-200 text-black"
           }`} // Set background and text color for the selected button
           onClick={() => handleSelect(label)}
         >
