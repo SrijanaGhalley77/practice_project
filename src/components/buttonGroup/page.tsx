@@ -1,25 +1,22 @@
-import React, { useState } from "react";
+// ButtonGroup.tsx
+import React from "react";
 import { Button } from "@/components/ui/button";
-
+import { useMenuContext } from '../../context/menuContext/page'; // Adjust the import path as necessary
 
 const ButtonGroup: React.FC = () => {
+  const { selectedIndex, setSelectedIndex } = useMenuContext();
   const buttonLabels = ["Appetizers", "Main Course", "Desserts", "Wine", "Specials"];
-  const [selected, setSelected] = useState(buttonLabels[0]); // Set the first button as default selected
-
-  const handleSelect = (label: string) => {
-    setSelected(label);
-  };
 
   return (
     <div className="flex space-x-4">
-      {buttonLabels.map((label) => (
+      {buttonLabels.map((label, index) => (
         <Button
           key={label}
-          variant={selected === label ? "default" : "outline"} // Change variant based on selection
+          variant={selectedIndex === index ? "default" : "outline"}
           className={`${
-            selected === label ? "bg-primary-800 text-secondary-50" : "bg-gray-200 text-black"
-          }`} // Set background and text color for the selected button
-          onClick={() => handleSelect(label)}
+            selectedIndex === index ? "bg-primary-800 text-secondary-50" : "bg-gray-200 text-black"
+          }`}
+          onClick={() => setSelectedIndex(index)}
         >
           {label}
         </Button>

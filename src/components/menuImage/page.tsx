@@ -1,27 +1,28 @@
-// MenuImage.tsx
 import React from 'react';
-import {menuItems} from '../../context/menuData/MenuData';
+import { useMenuContext } from '../../context/menuContext/page'; 
 import {
     Card,
     CardContent,
 } from "@/components/ui/card";
 
-interface MenuImageProps {
-    selectedIndex: number | null;
-}
+const MenuImage: React.FC = React.memo(() => {
+    const { selectedRowIndex, dataToPass } = useMenuContext(); 
 
-const MenuImage: React.FC<MenuImageProps> = ({ selectedIndex }) => {
     return (
         <div className='mx-10 overflow-hidden bg-secondary-50'>
-            {selectedIndex !== null && (
+            {selectedRowIndex !== null && dataToPass[selectedRowIndex] && (
                 <Card className='w-full h-130 border-none shadow-none'>
                     <CardContent className='p-0 w-full h-full object-cover'>
-                        <img className='w-full h-full' src={menuItems[selectedIndex].image.src} alt={menuItems[selectedIndex].image.alt} />                        
+                        <img 
+                            className='w-full h-full transition duration-200' 
+                            src={dataToPass[selectedRowIndex].image.src} 
+                            alt={dataToPass[selectedRowIndex].image.alt} 
+                        />                        
                     </CardContent>
                 </Card>
             )}
         </div>
     );
-}
+});
 
 export default MenuImage;

@@ -1,23 +1,19 @@
 'use client';
-import React, { useState} from 'react';
+import React from 'react';
 import MenuTable from '../menuTable/page';
 import MenuImage from '../menuImage/page';
-
+import { useMenuContext } from '../../context/menuContext/page'; // Ensure correct import
 
 const Menu: React.FC = () => {
-    const [selectedIndex, setSelectedIndex] = useState<number | null>(0);
-
-    const handleRowClick = (index: number) => {
-        setSelectedIndex(index);
-    };
+    const { dataToPass, handleRowClick } = useMenuContext();
 
     return (
         <div className='flex justify-between w-full h-svh'>
-          <div className="w-1/2 p-x-5">
-            <MenuTable onRowClick={handleRowClick} />
+          <div className="w-1/2 px-5">
+            <MenuTable data={dataToPass} onRowClick={handleRowClick} />
           </div>
           <div className="w-1/2">
-            <MenuImage selectedIndex={selectedIndex} />
+            <MenuImage  /> {/* Removed unnecessary props */}
           </div>
         </div>
     );
