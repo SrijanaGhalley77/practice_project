@@ -1,6 +1,6 @@
 'use client';
 import React from 'react';
-import { useMenuContext } from '../../context/menuContext/page'; // Ensure correct import
+import { useMenuContext } from '../../context/menuContext/page';
 import {
     Table,
     TableBody,
@@ -14,7 +14,7 @@ interface MenuTableProps {
 }
 
 const MenuTable: React.FC<MenuTableProps> = React.memo(({ data, onRowClick }) => {
-    const { selectedRowIndex } = useMenuContext(); // Use context
+    const { selectedRowIndex } = useMenuContext(); 
 
     return (
         <Table className='h-120'>

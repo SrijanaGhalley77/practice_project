@@ -2,7 +2,7 @@
 import React from 'react';
 import MenuTable from '../menuTable/page';
 import MenuImage from '../menuImage/page';
-import { useMenuContext } from '../../context/menuContext/page'; // Ensure correct import
+import { useMenuContext } from '../../context/menuContext/page';
 
 const Menu: React.FC = () => {
     const { dataToPass, handleRowClick } = useMenuContext();
@@ -13,7 +13,7 @@ const Menu: React.FC = () => {
             <MenuTable data={dataToPass} onRowClick={handleRowClick} />
           </div>
           <div className="w-1/2">
-            <MenuImage  /> {/* Removed unnecessary props */}
+            <MenuImage  />
           </div>
         </div>
     );
