@@ -1,5 +1,5 @@
 
-import Header from "@/components/menuHeader/page";
+import Header from "@/components/menuHead/page";
 import Menu from "@/components/menu/page";
 import {MenuProvider} from "../context/menuContext/page"
 
