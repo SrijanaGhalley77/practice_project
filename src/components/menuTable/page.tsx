@@ -7,13 +7,20 @@ import {
     TableRow,
     TableCell,
 } from "@/components/ui/table";
+import {
+    Popover,
+    PopoverContent,
+    PopoverTrigger,
+  } from "@/components/ui/popover"
+  
 
 interface MenuTableProps {
-    data: Array<{ name: string; totalAmount: string; image: { src: string; alt: string } }>;
-    onRowClick: (index: number) => void; // Receive the onRowClick function as a prop
+    data: Array<{ name: string; price: string; image: { src: string; alt: string } }>;
+    onRowClick: (index: number) => void;
+    onRowHover: (index: number) => void;
 }
 
-const MenuTable: React.FC<MenuTableProps> = React.memo(({ data, onRowClick }) => {
+const MenuTable: React.FC<MenuTableProps> = React.memo(({ data, onRowClick, onRowHover }) => {
     const { selectedRowIndex } = useMenuContext(); 
 
     return (
@@ -22,7 +29,9 @@ const MenuTable: React.FC<MenuTableProps> = React.memo(({ data, onRowClick }) =>
                 {data.map((item, index) => (
                     <TableRow 
                         key={item.name} 
-                        onClick={() => onRowClick(index)} // Use the function passed as a prop
+                        onClick={() => onRowClick(index)} 
+                        onMouseEnter={() => onRowHover(index)} 
+                        // onMouseLeave={() => onRowHover(-1)}  //It will reset or decrease the row value by 1
                         role="row"
                         className={`cursor-pointer ${selectedRowIndex === index ? 'bg-secondary-50 transition duration-200' : ''}`}
                     >
@@ -33,7 +42,7 @@ const MenuTable: React.FC<MenuTableProps> = React.memo(({ data, onRowClick }) =>
                             {item.name}
                         </TableCell>
                         <TableCell className="text-right" role="cell">
-                            {item.totalAmount}
+                            {item.price}
                         </TableCell>
                     </TableRow>
                 ))}

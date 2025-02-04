@@ -9,7 +9,7 @@ import {
     CarouselPrevious,
     CarouselIndicator,
 } from "@/components/ui/carousel";
-import {images} from "../../context/sliderImg"
+import {images} from "../../contest/sliderImg"
 const SliderComponent: React.FC = () => {
     return (
         <section className="flex items-center justify-center relative w-svw h-1/4 overflow-hidden">

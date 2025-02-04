@@ -1,14 +1,15 @@
 'use client';
 import React, { createContext, useContext, useState, ReactNode } from 'react';
-import { menuData } from '../menuData/MenuData'; 
+import { menuData } from '../../contest/MenuData'; 
 
 interface MenuContextType {
   selectedIndex: number;
-  dataToPass: Array<{ name: string; totalAmount: string; image: { src: string; alt: string } }>;
+  dataToPass: Array<{ name: string; price: string; image: { src: string; alt: string } }>;
   setSelectedIndex: (index: number) => void;
   selectedRowIndex: number | null; 
   setSelectedRowIndex: (index: number | null) => void;
   handleRowClick: (index: number) => void; 
+  handleRowHover: (index: number) => void; 
 }
 
 const MenuContext = createContext<MenuContextType | undefined>(undefined);
@@ -17,6 +18,7 @@ export const MenuProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [dataToPass, setDataToPass] = useState(menuData.appetizers);
   const [selectedRowIndex, setSelectedRowIndex] = useState<number | null>(0);
+  
 
   const updateData = (index: number) => {
     switch (index) {
@@ -45,6 +47,10 @@ export const MenuProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     setSelectedRowIndex(index);
   };
 
+  const handleRowHover = (index: number) => {
+    setSelectedRowIndex(index);
+  };
+
   return (
     <MenuContext.Provider value={{
       selectedIndex,
@@ -55,7 +61,8 @@ export const MenuProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       },
       selectedRowIndex, 
       setSelectedRowIndex,
-      handleRowClick 
+      handleRowClick,
+      handleRowHover 
     }}>
       {children}
     </MenuContext.Provider>
