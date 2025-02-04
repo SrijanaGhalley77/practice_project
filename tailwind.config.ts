@@ -10,7 +10,11 @@ export default {
   theme: {
   	extend: {
   		colors: {
-  			background: 'hsl(var(--background))',
+			black: '#000000',
+  			background:{
+				DEFAULT: 'hsl(var(--background))',
+				carouselImg: "url('/dish1.png')"  
+			},
   			foreground: 'hsl(var(--foreground))',
   			card: {
   				DEFAULT: 'hsl(var(--card))',

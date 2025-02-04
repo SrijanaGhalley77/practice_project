@@ -21,6 +21,7 @@ type CarouselProps = {
   setApi?: (api: CarouselApi) => void
   totalItems?: number
   children?: React.ReactNode
+  backgroundImage?: string 
 }
 
 
@@ -59,6 +60,7 @@ const Carousel = React.forwardRef<
       className,
       children,
       totalItems,
+      backgroundImage,
       ...props
     },
     ref
@@ -155,6 +157,11 @@ const Carousel = React.forwardRef<
           className={cn("relative", className)}
           role="region"
           aria-roledescription="carousel"
+          style={{
+            backgroundImage: backgroundImage ? `url(${backgroundImage})` : undefined,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+          }}
           {...props}
         >
           <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
