@@ -7,12 +7,7 @@ import {
     TableRow,
     TableCell,
 } from "@/components/ui/table";
-import {
-    Popover,
-    PopoverContent,
-    PopoverTrigger,
-  } from "@/components/ui/popover"
-  
+import { useRouter } from 'next/navigation';
 
 interface MenuTableProps {
     data: Array<{ name: string; price: string; image: { src: string; alt: string } }>;
@@ -21,7 +16,13 @@ interface MenuTableProps {
 }
 
 const MenuTable: React.FC<MenuTableProps> = React.memo(({ data, onRowClick, onRowHover }) => {
-    const { selectedRowIndex } = useMenuContext(); 
+    const { selectedRowIndex } = useMenuContext();
+    const router = useRouter();
+
+    const handleRowClick = (item: { name: string; price: string }) => {
+        // Navigate to the PopoverPage with item details as query parameters
+        router.push(`/modal/page?name=${encodeURIComponent(item.name)}&price=${encodeURIComponent(item.price)}`);
+    };
 
     return (
         <Table className='h-120'>
@@ -29,9 +30,11 @@ const MenuTable: React.FC<MenuTableProps> = React.memo(({ data, onRowClick, onRo
                 {data.map((item, index) => (
                     <TableRow 
                         key={item.name} 
-                        onClick={() => onRowClick(index)} 
+                        onClick={() => {
+                            onRowClick(index);
+                            handleRowClick(item); // Handle row click
+                        }} 
                         onMouseEnter={() => onRowHover(index)} 
-                        // onMouseLeave={() => onRowHover(-1)}  //It will reset or decrease the row value by 1
                         role="row"
                         className={`cursor-pointer ${selectedRowIndex === index ? 'bg-secondary-50 transition duration-200' : ''}`}
                     >

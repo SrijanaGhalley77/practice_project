@@ -45,6 +45,7 @@ export const MenuProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   // Function to handle row selection
   const handleRowClick = (index: number) => {
     setSelectedRowIndex(index);
+    
   };
 
   const handleRowHover = (index: number) => {

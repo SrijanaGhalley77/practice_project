@@ -1,40 +1,24 @@
+'use client';
 import React from 'react';
-import {
-    Card,
-    CardContent,
-    CardDescription,
-    CardFooter,
-    CardHeader,
-    CardTitle,
-} from "@/components/ui/card";
-import { useMenuContext } from '../../context/menuContext/page';
+import { useRouter } from 'next/navigation';
+import { useSearchParams } from 'next/navigation';
 
+const Details: React.FC = () => {
+    const router = useRouter();
+    const searchParams = useSearchParams();
+    
+    const name = searchParams.get('name');
+    const price = searchParams.get('price');
 
-// Define the props interface
-interface DetailsProps {
-    item: {
-        data: Array<{ name: string; price: string; image: { src: string; alt: string } }>;
-    };
-}
+    if (!name || !price) {
+        return <p>Loading...</p>;
+    }
 
-const Details: React.FC<DetailsProps> = ({ item }) => {
     return (
         <section>
-            {item.data.map((item) => (
-                <Card key={item.name}>
-                    <CardHeader>
-                        <CardTitle>{item.name}</CardTitle>
-                        <CardDescription>{item.price}</CardDescription>
-                    </CardHeader>
-                    <CardContent>
-                        <img src={item.image.src} alt={item.image.alt} />
-                        <p>Details about {item.name}</p>
-                    </CardContent>
-                    <CardFooter>
-                        <p>Additional information can go here.</p>
-                    </CardFooter>
-                </Card>
-            ))}
+            <h3>{name}</h3>
+            <p>{price}</p>
+            <button onClick={() => router.back()}>Cancel</button>
         </section>
     );
 }
