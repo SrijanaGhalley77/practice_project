@@ -1,39 +1,24 @@
-// "use client";
 import React from 'react';
-import {
-    Menubar,
-    MenubarContent,
-    MenubarItem,
-    MenubarMenu,
-    MenubarSeparator,
-    MenubarShortcut,
-    MenubarTrigger,
-} from "@/components/ui/menubar";
+import Link from 'next/link';
+
+const links = [
+  { href: '/about', text: 'About Us' },
+  { href: '/menu', text: 'Menu' },
+  { href: '/contacts', text: 'Contacts' },
+  { href: '/reservations', text: 'Reservations' },
+  { href: '/shops', text: 'Shops' },
+  { href: '/news', text: 'News' },
+];
 
 const Header: React.FC = () => {
   return (
-    <div >
-        <Menubar className="flex justify-center">
-            <MenubarMenu>
-                <MenubarTrigger>About Us</MenubarTrigger>
-                {/* <MenubarContent>
-                    <MenubarItem>
-                        New Tab <MenubarShortcut>⌘T</MenubarShortcut>
-                    </MenubarItem>
-                    <MenubarItem>New Window</MenubarItem>
-                    <MenubarSeparator />
-                    <MenubarItem>Share</MenubarItem>
-                    <MenubarSeparator />
-                    <MenubarItem>Print</MenubarItem>
-                </MenubarContent> */}
-                <MenubarTrigger>Menu</MenubarTrigger>
-                <MenubarTrigger>Contacts</MenubarTrigger>
-                <MenubarTrigger>Reservations</MenubarTrigger>
-                <MenubarTrigger>Shops</MenubarTrigger>
-                <MenubarTrigger>News</MenubarTrigger>
-            </MenubarMenu>
-        </Menubar>
-    </div>
+    <header className=" flex justify-center space-x-8 bg-secondary-50 p-1 border shadow-sm">
+        {links.map((link) => (
+          <Link key={link.href} href={link.href} className="text-primary-950 hover:text-primary-800">
+            {link.text}
+          </Link>
+        ))}
+    </header>
   );
 };
 
