@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from 'react';
+import React from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 import {
     Carousel,
@@ -9,6 +9,7 @@ import {
     CarouselPrevious,
     CarouselIndicator,
 } from "@/components/ui/carousel";
+import Image from 'next/image';
 
 const images = [
     { src: './dish1.png', alt: 'Dish 1' },
@@ -20,20 +21,19 @@ const images = [
 
 const SliderComponent: React.FC = () => {
     return (
-        <section className="flex items-center justify-center relative w-svw h-1/4 overflow-hidden">
-            <Carousel className="bg-black w-full h-full object-cover" totalItems={images.length}>
+        <section className="flex items-center justify-center relative w-full h-screen overflow-hidden">
+            <Carousel className="w-full h-full object-cover" totalItems={images.length}>
                 <CarouselContent>
                     {images.map((image, index) => (
-                        <CarouselItem key={index} index={index} className="transition-transform duration-500 ease-in-out transform hover:scale-105">
-                            <div className="p-0 m-0 items-center justify-center"> 
-                                <h1 className="text-#fff">Welcome to Lunar</h1>
-                                <img src={image.src} alt={image.alt} className="w-1/2 h-1/2 object-fit" />
-
-                                {/* <Card className=" border-none w-full h-full"> 
-                                    <CardContent className="flex aspect-video items-center justify-center p-0"> 
-                                        <img src={image.src} alt={image.alt} className="w-1/2 h-1/2 object-fit" />
-                                    </CardContent>
-                                </Card>  */}
+                        <CarouselItem key={index} index={index} className="w-full h-full object-cover transition-transform duration-500 ease-in-out transform hover:scale-105 relative">
+                            <img 
+                                src="/bg.avif"
+                                alt='Carousel Background'
+                                className='absolute inset-0 w-full h-full object-cover -z-10'
+                            />
+                            <div className="p-0 m-0 w-full h-full flex items-center justify-center relative z-10"> 
+                                <h1 className="font-roboto text-white text-9xl absolute top-20 z-10">Welcome to Lunar</h1>
+                                <img src={image.src} alt={image.alt} className="w-3/4 h-4/4 object-fit absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-20" />
                             </div>
                         </CarouselItem>
                     ))}
@@ -46,7 +46,7 @@ const SliderComponent: React.FC = () => {
                 </div>
                 <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
                     {images.map((_, index) => (
-                    <CarouselIndicator  key={index} index={index} />
+                        <CarouselIndicator key={index} index={index} />
                     ))}
                 </div>
             </Carousel>
