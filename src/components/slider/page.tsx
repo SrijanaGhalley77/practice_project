@@ -9,7 +9,6 @@ import {
     CarouselPrevious,
     CarouselIndicator,
 } from "@/components/ui/carousel";
-import Image from 'next/image';
 
 const images = [
     { src: './dish1.png', alt: 'Dish 1', },
