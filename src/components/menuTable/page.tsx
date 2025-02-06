@@ -7,7 +7,7 @@ import {
     TableRow,
     TableCell,
 } from "@/components/ui/table";
-import { useRouter } from 'next/navigation';
+import Details from "../modal/page"
 
 interface MenuTableProps {
     data: Array<{ name: string; price: string; image: { src: string; alt: string } }>;
@@ -17,14 +17,9 @@ interface MenuTableProps {
 
 const MenuTable: React.FC<MenuTableProps> = React.memo(({ data, onRowClick, onRowHover }) => {
     const { selectedRowIndex } = useMenuContext();
-    const router = useRouter();
-
-    const handleRowClick = (item: { name: string; price: string }) => {
-        // Navigate to the PopoverPage with item details as query parameters
-        router.push(`/modal/page?name=${encodeURIComponent(item.name)}&price=${encodeURIComponent(item.price)}`);
-    };
 
     return (
+        <>
         <Table className='h-120'>
             <TableBody>
                 {data.map((item, index) => (
@@ -32,7 +27,6 @@ const MenuTable: React.FC<MenuTableProps> = React.memo(({ data, onRowClick, onRo
                         key={item.name} 
                         onClick={() => {
                             onRowClick(index);
-                            handleRowClick(item); // Handle row click
                         }} 
                         onMouseEnter={() => onRowHover(index)} 
                         role="row"
@@ -51,6 +45,9 @@ const MenuTable: React.FC<MenuTableProps> = React.memo(({ data, onRowClick, onRo
                 ))}
             </TableBody>
         </Table>
+
+        <Details />
+        </>
     );
 });
 

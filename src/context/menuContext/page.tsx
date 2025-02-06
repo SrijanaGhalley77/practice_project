@@ -10,6 +10,10 @@ interface MenuContextType {
   setSelectedRowIndex: (index: number | null) => void;
   handleRowClick: (index: number) => void; 
   handleRowHover: (index: number) => void; 
+  isDialogOpen: boolean;
+  openDialog: (data: any) => void;
+  closeDialog: () => void;
+  dialogData: any;
 }
 
 const MenuContext = createContext<MenuContextType | undefined>(undefined);
@@ -18,8 +22,9 @@ export const MenuProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [dataToPass, setDataToPass] = useState(menuData.appetizers);
   const [selectedRowIndex, setSelectedRowIndex] = useState<number | null>(0);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [dialogData, setDialogData] = useState<any>(null);
   
-
   const updateData = (index: number) => {
     switch (index) {
       case 0:
@@ -42,14 +47,23 @@ export const MenuProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
     }
   };
 
-  // Function to handle row selection
   const handleRowClick = (index: number) => {
     setSelectedRowIndex(index);
-    
-  };
+    openDialog(dataToPass[index]); // Pass the selected item data
+};
 
   const handleRowHover = (index: number) => {
     setSelectedRowIndex(index);
+  };
+
+  const openDialog = (data: any) => {
+    setDialogData(data); // Store the actual data instead of index
+    setIsDialogOpen(true);
+};
+
+  const closeDialog = () => {
+    setIsDialogOpen(false);
+    setDialogData(null);
   };
 
   return (
@@ -63,7 +77,11 @@ export const MenuProvider: React.FC<{ children: ReactNode }> = ({ children }) =>
       selectedRowIndex, 
       setSelectedRowIndex,
       handleRowClick,
-      handleRowHover 
+      handleRowHover,
+      isDialogOpen, // Added this line
+      openDialog,
+      closeDialog,
+      dialogData // Added this line
     }}>
       {children}
     </MenuContext.Provider>
