@@ -189,8 +189,7 @@ export default {
 			'225': '900px',   // 56.25rem
 			'256': '1024px',
 			// Add more custom sizes as needed
-	}
-		
+	}	
   	}
   },
   plugins: [require("tailwindcss-animate")],
