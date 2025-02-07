@@ -1,13 +1,39 @@
-"use client";
+// "use client";
 import React from 'react';
-import ButtonGroup from '../buttonGroup/page';
+import {
+    Menubar,
+    MenubarContent,
+    MenubarItem,
+    MenubarMenu,
+    MenubarSeparator,
+    MenubarShortcut,
+    MenubarTrigger,
+} from "@/components/ui/menubar";
 
 const Header: React.FC = () => {
-  return (    
-    <header className='flex flex-col justify-center items-center font-roboto'>
-      <p className='font-semiold text-5xl w-[900px] text-center text-primary-950'>Our menu is a carefully curated selection of Italian masterpieces.</p>
-      <ButtonGroup/>
-    </header>
+  return (
+    <div >
+        <Menubar className="flex justify-center">
+            <MenubarMenu>
+                <MenubarTrigger>About Us</MenubarTrigger>
+                {/* <MenubarContent>
+                    <MenubarItem>
+                        New Tab <MenubarShortcut>⌘T</MenubarShortcut>
+                    </MenubarItem>
+                    <MenubarItem>New Window</MenubarItem>
+                    <MenubarSeparator />
+                    <MenubarItem>Share</MenubarItem>
+                    <MenubarSeparator />
+                    <MenubarItem>Print</MenubarItem>
+                </MenubarContent> */}
+                <MenubarTrigger>Menu</MenubarTrigger>
+                <MenubarTrigger>Contacts</MenubarTrigger>
+                <MenubarTrigger>Reservations</MenubarTrigger>
+                <MenubarTrigger>Shops</MenubarTrigger>
+                <MenubarTrigger>News</MenubarTrigger>
+            </MenubarMenu>
+        </Menubar>
+    </div>
   );
 };
 

@@ -5,16 +5,16 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "font-roboto inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
   {
     variants: {
       variant: {
         default:
-          "bg-secondary-50 text-secondary-950 border border-secondary-100 shadow hover:bg-primary-950 hover:text-secondary-100 hover:border-none transition duration-200",
+          "bg-secondary-50 text-secondary-950 border border-secondary-50 shadow hover:bg-secondary-500 hover:text-secondary-50 hover:border-none transition duration-200",
         destructive:
           "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
         outline:
-          "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",
+          "text-secondary-50 bg-primary-700 border border-secondary-100 focus:outline-none hover:bg-primary-950 focus:ring-4 focus:ring-primary-200  dark:bg-secondary-800 dark:text-secondary-50 dark:border-secondary-600 dark:hover:bg-secondary-700 dark:hover:border-secondary-600 dark:focus:ring-secondary-700",
         secondary:
           "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
@@ -23,8 +23,8 @@ const buttonVariants = cva(
       size: {
         default: "h-9 rounded-none px-4 py-2",
         sm: "h-8 rounded-none px-3 text-xs",
-        lg: "h-10 rounded-none px-8 font-roboto text-base",
-        icon: "h-9 w-9",
+        lg: "font-medium rounded-none text-sm px-5 py-2.5 me-2 mb-2",
+        icon: "h-9 w-9 text-lg font-semibold rounded-full p-4",
       },
     },
     defaultVariants: {

@@ -1,17 +1,12 @@
-
-import Header from "@/components/menuHead/page";
-import Menu from "@/components/menu/page";
-import {MenuProvider} from "../context/menuContext/page"
-
+import Slider from "../components/slider/page"
+import Header from "@/components/menuHeader/page";
 
 export default function Home() {
   return (
-    <MenuProvider>
-      <main className="bg-secondary-50 flex flex-col gap-12">
+      <main className="bg-secondary-50 flex flex-col ">
+
         <Header />
-        <Menu />
+        <Slider />
       </main>
-    </MenuProvider>
-      
   );
 }
