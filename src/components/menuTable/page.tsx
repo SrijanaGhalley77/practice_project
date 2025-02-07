@@ -39,7 +39,7 @@ const MenuTable: React.FC<MenuTableProps> = React.memo(({ data, onRowClick, onRo
                             {item.name}
                         </TableCell>
                         <TableCell className="text-right" role="cell">
-                            {item.price}
+                            ${item.price}
                         </TableCell>
                     </TableRow>
                 ))}
