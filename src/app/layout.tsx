@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Roboto } from "next/font/google";
 import "./globals.css";
 import Nav from "../components/NavBar/page";
+import Header from "@/components/menuHeader/page";
+
 
 
 export const roboto = Roboto({
@@ -34,8 +36,9 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased ${roboto.variable}`}
-      > 
-      
+      >
+          <Nav />
+          <Header />
         {children}
       </body>
     </html>
