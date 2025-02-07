@@ -33,7 +33,7 @@ const Details: React.FC = () => {
     if (!isDialogOpen || !dialogData) return null; 
 
     return (
-        <section className='font-roboto overflow-scroll'>
+        <section className='font-roboto overflow-scroll gap-y-2'>
             <Dialog open={isDialogOpen} onOpenChange={closeDialog}>  
                 <DialogContent>
                     <DialogHeader>
@@ -42,15 +42,15 @@ const Details: React.FC = () => {
                             {dialogData.description}
                         </DialogDescription>
                     </DialogHeader>
-                    <form className='flex flex-col justify-center items-center gap-2'>
+                    <form className='flex flex-col justify-center items-center gap-4'>
                         <img src={dialogData.image.src} alt={dialogData.image.alt} />
-                        <div className='flex flex-col gap-2 '>
+                        <div className='flex flex-col gap-2 font-roboto text-secondary-950 '>
                             <p>Price: $<span>{dialogData.price}</span></p>
                             <p>Total Price: $<span>{totalPrice}</span></p>
                         </div>
-                        <div className='flex gap-2'>
+                        <div className='flex gap-4'>
                             <Button type='button' variant="outline" size="icon" onClick={handleDecrement}>-</Button>
-                            <span className='w-10 bg-primary-50 border border-secondary-800 text-secondary-600 items-center text-center'>
+                            <span className='w-10 bg-primary-50 border border-secondary-800 text-secondary-600 items-bottom text-center'>
                                 {count}
                             </span>
                             <Button type='button' variant="outline" size="icon" onClick={handleIncrement}>+</Button>
