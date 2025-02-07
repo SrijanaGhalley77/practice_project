@@ -2,18 +2,18 @@
 import React from 'react';
 import Header from "@/components/menuHead/page";
 import Menu from "@/components/menu/page";
-import { MenuProvider } from "../../context/menuContext/page";
+import { MenuProvider } from "../../../context/menuContext/page";
 
-const MenuPage: React.FC = () => {
+function Page() {
 
     return (
         <MenuProvider>
-        <main className="bg-secondary-50 flex flex-col gap-12">
+        <div className="bg-secondary-50 flex flex-col gap-12">
           <Header />
           <Menu />
-        </main>
+        </div>
       </MenuProvider>
     );
 };
 
-export default MenuPage;
+export default Page;

@@ -5,3 +5,8 @@ export const images = [
     { src: './dish4.png', alt: 'Dish 4' },
     { src: './dish5.png', alt: 'Dish 5' },
 ];
+export const logo = [
+    { src: './michelinStars.png', alt: 'Michelin Star' },
+    { src: './lesLogo.png', alt: 'Les logo' },
+    { src: './forbesWhite.png', alt: 'Forbes Logo' },
+];
