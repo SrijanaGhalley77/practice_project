@@ -162,9 +162,11 @@ export default {
 			'12': '48px',     // 3rem
 			'14': '56px',     // 3.5rem
 			'16': '64px',     // 4rem
+			'18': '72px',
 			'20': '80px',     // 5rem
 			'24': '96px',     // 6rem
 			'28': '112px',    // 7rem
+			'30': '120px',
 			'32': '128px',    // 8rem
 			'36': '144px',    // 9rem
 			'40': '160px',    // 10rem
@@ -185,9 +187,10 @@ export default {
 			'180': '720px',   // 45rem
 			'200': '800px',   // 50rem
 			'225': '900px',   // 56.25rem
+
+			'256': '1024px',
 			// Add more custom sizes as needed
-		}
-		
+	}	
   	}
   },
   plugins: [require("tailwindcss-animate")],
