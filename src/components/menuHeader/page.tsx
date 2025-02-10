@@ -12,7 +12,7 @@ const links = [
 
 const Header: React.FC = () => {
   return (
-    <header className=" flex justify-center space-x-8 bg-secondary-50 p-1 border shadow-sm">
+    <header className=" flex justify-center space-x-32px bg-secondary-50 p-1 border shadow-sm">
         {links.map((link) => (
           <Link key={link.href} href={link.href} className="text-primary-950 hover:text-primary-800">
             {link.text}

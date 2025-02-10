@@ -1,4 +1,4 @@
-'use client';
+
 import React, { useState } from 'react';
 import { useMenuContext } from '../../context/menuContext/page';
 import {
