@@ -1,6 +1,6 @@
 
 import React, { useState } from 'react';
-import { useMenuContext } from '../../context/menuContext/page';
+import { useMenuContext } from '../../context/menuContext';
 import {
     Dialog,
     DialogContent,

@@ -1,7 +1,7 @@
 // ButtonGroup.tsx
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { useMenuContext } from '../../context/menuContext/page'; // Adjust the import path as necessary
+import { useMenuContext } from '../../context/menuContext'; // Adjust the import path as necessary
 
 const ButtonGroup: React.FC = () => {
   const { selectedIndex, setSelectedIndex } = useMenuContext();

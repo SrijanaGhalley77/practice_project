@@ -1,12 +1,12 @@
 import React from 'react';
-import { useMenuContext } from '../../context/menuContext/page';
+import { useMenuContext } from '../../context/menuContext';
 import {
     Table,
     TableBody,
     TableRow,
     TableCell,
 } from "@/components/ui/table";
-import Details from "../modal/page"
+import Details from "../modal"
 
 interface MenuTableProps {
     data: Array<{ name: string; price: string; image: { src: string; alt: string } }>;

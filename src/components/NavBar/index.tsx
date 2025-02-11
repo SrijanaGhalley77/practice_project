@@ -3,7 +3,7 @@ import React from 'react';
 import { HiOutlineBuildingOffice2 } from "react-icons/hi2";
 import { PiForkKnife } from "react-icons/pi";
 import { MdGolfCourse } from "react-icons/md";
-import LanguageDropdown from "../langDropDwn/page";
+import LanguageDropdown from "../langDropDwn";
 
 const Nav: React.FC = () => {
 

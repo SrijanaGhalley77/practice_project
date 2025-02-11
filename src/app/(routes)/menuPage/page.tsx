@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from "@/components/menuHead/page";
+import Header from "@/components/menuHead";
 import Menu from "@/components/menu/page";
-import { MenuProvider } from "../../../context/menuContext/page";
+import { MenuProvider } from "../../../context/menuContext";
 
 function Page() {
 

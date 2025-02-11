@@ -1,8 +1,8 @@
 'use client';
 import React from 'react';
-import MenuTable from '../menuTable/page';
-import MenuImage from '../menuImage/page';
-import { useMenuContext } from '../../context/menuContext/page';
+import MenuTable from '../menuTable';
+import MenuImage from '../menuImage';
+import { useMenuContext } from '../../context/menuContext';
 
 const Menu: React.FC = () => {
     const { dataToPass, handleRowClick, handleRowHover } = useMenuContext();

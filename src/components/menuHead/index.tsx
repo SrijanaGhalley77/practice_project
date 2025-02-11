@@ -1,6 +1,6 @@
 "use client";
 import React from 'react';
-import ButtonGroup from '../buttonGroup/page';
+import ButtonGroup from '../buttonGroup';
 
 const Header: React.FC = () => {
   return (    
